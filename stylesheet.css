@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Biryani&display=swap');
+
+:root{
+    font-family: 'Biryani', sans-serif;
+}
+
+body{
+    background: url("https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png");
+    margin: 0;
+}
+
+main{
+    margin-left: 20%;
+    padding-right: 3%;
+    border-left: 5px solid #009933;
+    padding-left: 3%;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+
+#navbar{
+    position: fixed;
+    width: 20%;
+}
+
+#navbar a{
+    color: black;
+}
+
+#navbar a:hover{
+    animation-name: bigger-green;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bigger-green{
+    100%{
+        color: #009933;
+        font-size: large;
+    }
+}
+
+#navbar li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: #009933;
+    font-weight: bold;
+}
+
+.text-center{
+    text-align: center;
+}
+
+centered{
+    display: block;
+    margin: auto;
+}
+
+code{
+    font-size: large;
+}
+
+ul{
+    padding: 0;
+}
+
+li{
+    padding: 1% 0 1% 0;
+}
+
+.nav-li{
+    padding: 2% 0 2% 10%;
+    border-bottom: 1px solid #009933;
+}
+
+
+h2{
+    font-size: 175%;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 200%;
+    margin-top: 3%;
+}
+
+.codeStyle{
+    background-color: #1f2e2e;
+    color: white;
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+.codeStyleDiv{
+    background-color: #1f2e2e   ;
+    color: white;
+    padding: 0.5em;
+    border-radius: 5px;
+    width: 60%;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 800px){
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+
+    main{
+        margin: 0;
+        border: none;
+    }
+
+    #navbar{
+        width: 100%;
+        position: relative;
+        border-bottom: 2px solid #009933;
+    }
+
+    .nav-li{
+        padding: 1% 0 1% 5%;
+        border-bottom: 1px solid #009933;
+    }
+
+    ul{
+        margin: 0;
+    }
+
+    .codeStyleDiv{
+        background-color: #1f2e2e   ;
+        color: white;
+        padding: 0.5em;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+}
