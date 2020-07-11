@@ -38,7 +38,7 @@
 
                 <p>If we wanted the line to stand by itself, we could specify that it is a paragraph by enclosing it in paragraph tags:</p>
 
-                <code class="codeStyle">&ltp&gtMy cat is very grumpy&lt/p&gt</code>
+                <code class="codeStyle">&lt;p&gt;My cat is very grumpy&lt;/p&gt;</code>
                 
                 <h3>Anatomy of an HTML element</h3>
 
@@ -72,22 +72,22 @@
                     <li>The attribute name followed by an equal sign.</li>
                     <li>The attribute value wrapped by opening and closing quotation marks.</li>
                 </ol>
-                <p><strong>Note:</strong> Simple attribute values that don't contain ASCII whitespace (or any of the characters  <code>" ' ` = < ></code>) 
+                <p><strong>Note:</strong> Simple attribute values that don't contain ASCII whitespace (or any of the characters  <code>" ' ` = &lt; &gt;</code>) 
                 can remain unquoted, but it is recommended that you quote all attribute values, as it makes the code more consistent and 
                 understandable.</p>
 
 
                 <h3>Nesting elements</h3>
                 <p>You can put elements inside other elements too — this is called nesting. If we wanted to state that our cat is very grumpy,
-                we could wrap the word "very" in a <code>&ltstrong&gt</code> element, which means that the word is to be strongly emphasized:</p>
+                we could wrap the word "very" in a <code>&lt;strong&gt;</code> element, which means that the word is to be strongly emphasized:</p>
 
-                <code class="codeStyle">&ltp&gtMy cat is &ltstrong&gtvery&lt/strong&gt grumpy.&lt/p&gt</code>
+                <code class="codeStyle">&lt;p&gt;My cat is &lt;strong&gt;very&lt;/strong&gt; grumpy.&lt;/p&gt;</code>
 
                 <p>You do however need to make sure that your elements are properly nested. In the example above, we opened the 
-                <code>&ltp&gt</code> element first, then the <code>&ltstrong&gt</code> element; therefore, we have to close the 
-                <code>&ltstrong&gt</code> element first, then the <code>&ltp&gt</code> element. The following is incorrect:</p>
+                <code>&lt;p&gt;</code> element first, then the <code>&lt;strong&gt;</code> element; therefore, we have to close the 
+                <code>&lt;strong&gt;</code> element first, then the <code>&lt;p&gt;</code> element. The following is incorrect:</p>
 
-                <code class="codeStyle">&ltp&gtMy cat is &ltstrong&gtvery grumpy.&lt/p&gt&lt/strong&gt</code>
+                <code class="codeStyle">&lt;p&gt;My cat is &lt;strong&gt;very grumpy.&lt;/p&gt;&lt;/strong&gt;</code>
 
                 <p>The elements have to open and close correctly so that they are clearly inside or outside one another. If they overlap 
                 as shown above, then your web browser will try to make the best guess at what you were trying to say, which can lead to 
@@ -96,12 +96,12 @@
 
                 <h3>Empty elements</h3>
 
-                <p>Some elements have no content and are called empty elements. Take the <code>&ltimg&gt</code> element that we already have
+                <p>Some elements have no content and are called empty elements. Take the <code>&lt;img&gt;</code> element that we already have
                 in our HTML page:</p>
 
-                <code class="codeStyle">&ltimg src="images/firefox-icon.png" alt="My test image"&gt</code>
+                <code class="codeStyle">&lt;img src="images/firefox-icon.png" alt="My test image"&gt;</code>
 
-                <p>This contains two attributes, but there is no closing <code>&lt/img&gt</code> tag and no inner content. This is because an image element
+                <p>This contains two attributes, but there is no closing <code>&lt;/img&gt;</code> tag and no inner content. This is because an image element
                 doesn't wrap content to affect it. Its purpose is to embed an image in the HTML page in the place it appears.</p>
 
                 
@@ -112,46 +112,46 @@
 
                 <p class="codeStyleDiv">
                     <code>
-                        &lt!DOCTYPE html&gt<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lthtml&gt<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lthead&gt<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltmeta charset="utf-8"&gt<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lttitle&gtMy test page&lt/title&gt<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt/head&gt<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&ltbody&gt<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltimg src="images/firefox-icon.png" alt="My test image"&gt<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/body&gt<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt/html&gt<br>
+                        &lt;!DOCTYPE html&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;html&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="utf-8"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My test page&lt;/title&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="images/firefox-icon.png" alt="My test image"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/html&gt;<br>
                     </code>
                 </p>
 
                 <p>Here, we have the following:</p>
 
                 <ul>
-                    <li><code><strong>&lt!DOCTYPE html&gt</strong></code> — the doctype. It is required preamble. In the mists of time, when 
+                    <li><code><strong>&lt;!DOCTYPE html&gt;</strong></code> — the doctype. It is required preamble. In the mists of time, when 
                     HTML was young (around 1991/92), doctypes were meant to act as links to a set of rules that the HTML page had to follow to 
                     be considered good HTML, which could mean automatic error checking and other useful things. However these days, they don't 
                     do much, and are basically just needed to make sure your document behaves correctly. That's all you need to know for 
                     now.</li>
 
-                    <li><code><strong>&lthtml&gt&lt/html&gt</strong></code> — the <code>&lthtml&gt</code> element. This element wraps all the 
+                    <li><code><strong>&lt;html&gt;&lt;/html&gt;</strong></code> — the <code>&lt;html&gt;</code> element. This element wraps all the 
                     content on the entire page and is sometimes known as the root element.</li>
 
-                    <li><code><strong>&lthead&gt&lt/head&gt</strong></code> — the <code>&lthead&gt</code> element. This element acts as a 
+                    <li><code><strong>&lt;head&gt;&lt;/head&gt;</strong></code> — the <code>&lt;head&gt;</code> element. This element acts as a 
                     container for all the stuff you want to include on the HTML page that isn't the content you are showing to your page's 
                     viewers. This includes things like <a href="https://developer.mozilla.org/en-US/docs/Glossary/keyword" target="_blank">
                     keywords</a> and a page description that you want to appear in search results, CSS to style our content, character set 
                     declarations and more.</li>
 
-                    <li><code><strong>&ltmeta charset="utf-8"&gt</strong></code> — This element sets the character set your document should use
+                    <li><code><strong>&lt;meta charset="utf-8"&gt;</strong></code> — This element sets the character set your document should use
                     to UTF-8 which includes most characters from the vast majority of written languages. Essentially, it can now handle any 
                     textual content you might put on it. There is no reason not to set this and it can help avoid some problems later on.</li>
 
-                    <li><code><strong>&lttitle&gt&lt/title&gt</strong></code> — the <code>&lttitle&gt</code> element. This sets the title of 
+                    <li><code><strong>&lt;title&gt;&lt;/title&gt;</strong></code> — the <code>&lt;title&gt;</code> element. This sets the title of 
                     your page, which is the title that appears in the browser tab the page is loaded in. It is also used to describe the page 
                     when you bookmark/favourite it.</li>
 
-                    <li><code><strong>&ltbody&gt&lt/body&gt</strong></code> — the <code>&ltbody&gt</code> element. This contains all the 
+                    <li><code><strong>&lt;body&gt;&lt;/body&gt;</strong></code> — the <code>&lt;body&gt;</code> element. This contains all the 
                     content that you want to show to web users when they visit your page, whether that's text, images, videos, games, 
                     playable audio tracks or whatever else.</li>
                 </ul>
@@ -165,7 +165,7 @@
                 <p>As we said before, it embeds an image into our page in the position it appears. It does this via the <code>src</code> 
                 (source) attribute, which contains the path to our image file:</p>
 
-                <code class="codeStyle">&ltimg src="images/firefox-icon.png" alt="My test image"&gt</code>
+                <code class="codeStyle">&lt;img src="images/firefox-icon.png" alt="My test image"&gt;</code>
                
                 <p>We have also included an <code>alt</code> (alternative) attribute. In this attribute, you specify descriptive text for 
                 users who cannot see the image, possibly because of the following reasons:</p> 
@@ -199,18 +199,18 @@
                 <h3>Headings</h3>
                 <p>Heading elements allow you to specify that certain parts of your content are headings — or subheadings. 
                 In the same way that a book has the main title, chapter titles and subtitles, an HTML document can too. 
-                HTML contains 6 heading levels, <code>&lth1&gt–&lth6&gt</code>, although you'll commonly only use 3 to 4 at most:</p>
+                HTML contains 6 heading levels, <code>&lt;h1&gt;–&lt;h6&gt;</code>, although you'll commonly only use 3 to 4 at most:</p>
                 
                 <p class="codeStyleDiv">
                     <code>
-                        &lth1&gtMy main title&lt/h1&gt<br>
-                        &lth2&gtMy top level heading&lt/h2&gt<br>
-                        &lth3&gtMy subheading&lt/h3&gt<br>
-                        &lth4&gtMy sub-subheading&lt/h4&gt
+                        &lt;h1&gt;My main title&lt;/h1&gt;<br>
+                        &lt;h2&gt;My top level heading&lt;/h2&gt;<br>
+                        &lt;h3&gt;My subheading&lt;/h3&gt;<br>
+                        &lt;h4&gt;My sub-subheading&lt;/h4&gt;
                     </code>
                 </p>
 
-                <p>Now try adding a suitable title to your HTML page just above your <code>&ltimg&gt</code> element.</p>
+                <p>Now try adding a suitable title to your HTML page just above your <code>&lt;img&gt;</code> element.</p>
 
                 <p><strong>Note:</strong> You'll see that your heading level 1 has an implicit style. Don't use heading elements to make text
                 bigger or bold, because they are used for <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility" target="_blank">
@@ -221,12 +221,12 @@
                 
                 <h3>Paragraphs</h3>
 
-                <p>As explained above, <code>&ltp&gt</code> elements are for containing paragraphs of text; you'll use these frequently when 
+                <p>As explained above, <code>&lt;p&gt;</code> elements are for containing paragraphs of text; you'll use these frequently when 
                 marking up regular text content:</p>
 
-                <code class="codeStyle">&ltp&gtThis is a single paragraph&lt/p&gt</code>
+                <code class="codeStyle">&lt;p&gt;This is a single paragraph&lt;/p&gt;</code>
 
-                <p>Add your sample text into one or a few paragraphs, placed directly below your <code>&ltimg&gt</code> element.</p>
+                <p>Add your sample text into one or a few paragraphs, placed directly below your <code>&lt;img&gt;</code> element.</p>
 
 
                 <h3>Lists</h3>
@@ -236,31 +236,31 @@
 
                 <ol>
                     <li><strong>Unordered lists</strong> are for lists where the order of the items doesn't matter, such as a shopping list. 
-                    These are wrapped in a <code>&ltul&gt</code> element.</li>
+                    These are wrapped in a <code>&lt;ul&gt;</code> element.</li>
                     <li><strong>Ordered lists</strong> are for lists where the order of the items does matter, such as a recipe. These are wrapped in an 
-                    <code>&ltol&gt</code> element.</li>
+                    <code>&lt;ol&gt;</code> element.</li>
                 </ol>
 
-                <p>Each item inside the lists is put inside an <code>&ltli&gt</code> (list item) element.</p>
+                <p>Each item inside the lists is put inside an <code>&lt;li&gt;</code> (list item) element.</p>
 
                 <p>For example, if we wanted to turn the part of the following paragraph fragment into a list</p>
 
-                <code class="codeStyle">&ltp&gtAt Mozilla, we’re a global community of technologists, thinkers, and builders working 
-                together...&lt/p&gt </code>
+                <code class="codeStyle">&lt;p&gt;At Mozilla, we’re a global community of technologists, thinkers, and builders working 
+                together...&lt;/p&gt; </code>
 
                 <p>We could modify the markup to this</p>
 
                 <p class="codeStyleDiv">
                     <code>
-                        &ltp&gtAt Mozilla, we’re a global community of&lt/p&gt<br><br>
+                        &lt;p&gt;At Mozilla, we’re a global community of&lt;/p&gt;<br><br>
 
-                        &ltul&gt <br>
-                        &ltli&gttechnologists&lt/li&gt<br>
-                        &ltli&gtthinkers&lt/li&gt<br>
-                        &ltli&gtbuilders&lt/li&gt<br>
-                        &lt/ul&gt<br><br>
+                        &lt;ul&gt; <br>
+                        &lt;li&gt;technologists&lt;/li&gt;<br>
+                        &lt;li&gt;thinkers&lt;/li&gt;<br>
+                        &lt;li&gt;builders&lt;/li&gt;<br>
+                        &lt;/ul&gt;<br><br>
 
-                        &ltp&gtworking together ... &lt/p&gt
+                        &lt;p&gt;working together ... &lt;/p&gt;
                     </code>
                 </p>
                 <p>Try adding an ordered or unordered list to your example page.</p>
@@ -272,22 +272,22 @@
                 <header><h2>Links</h2></header>
 
                 <p>Links are very important — they are what makes the web a web! To add a link, we need to use a simple element
-                — <code>&lta&gt</code> — "a" being the short form for "anchor". To make text within your paragraph into a link, 
+                — <code>&lt;a&gt;</code> — "a" being the short form for "anchor". To make text within your paragraph into a link, 
                 follow these steps:</p>
                 
                 <ol>
                     <li>Choose some text. We chose the text "Mozilla Manifesto".</li>
 
-                    <li>Wrap the text in an <code>&lta&gt</code> element, as shown below:</li>
-                    <code class="codeStyle">&lta&gtMozilla Manifesto&lt/a&gt</code>
+                    <li>Wrap the text in an <code>&lt;a&gt;</code> element, as shown below:</li>
+                    <code class="codeStyle">&lt;a&gt;Mozilla Manifesto&lt;/a&gt;</code>
 
-                    <li>Give the <code>&lta&gt</code> element an href attribute, as shown below:</li>
-                    <code class="codeStyle">&lta href=""&gtMozilla Manifesto&lt/a&gt</code>
+                    <li>Give the <code>&lt;a&gt;</code> element an href attribute, as shown below:</li>
+                    <code class="codeStyle">&lt;a href=""&gt;Mozilla Manifesto&lt;/a&gt;</code>
 
                     <li>Fill in the value of this attribute with the web address that you want the link to link to:</li>
                 </ol>
 
-                <code class="codeStyle">&lta href="https://www.mozilla.org/en-US/about/manifesto/"&gtMozilla Manifesto&lt/a&gt</code>
+                <code class="codeStyle">&lt;a href="https://www.mozilla.org/en-US/about/manifesto/"&gt;Mozilla Manifesto&lt;/a&gt;</code>
 
                 <p>You might get unexpected results if you omit the <code>https://</code> or <code>http://</code> part, called the protocol, 
                 at the beginning of the web address. After making a link, click it to make sure it is sending you where you wanted it to.</p>
